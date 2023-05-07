@@ -2,12 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'Gilmer Medium';
+	src: url('./assets/fonts/gilmer-medium.woff2') format('woff2');
+	font-style: normal;
+}
 
+@font-face {
+	font-family: 'Gilmer Regular';
+	src: url('./assets/fonts/gilmer-regular.woff2') format('woff2');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilmer Light';
+	src: url('./assets/fonts/gilmer-light.woff2') format('woff2');
+	font-style: normal;
+}
 
 @layer base {
-	:root {}
+	:root {
+		--color-blue: 243, 58%, 21%;
+		--color-green: 168, 53%, 52%, 1;
+		--color-light-green: 68, 53%, 52%, 0.16;
+	}
 
-	:root[data-theme='dark'] {}
+	/* :root[data-theme='dark'] {} */
 
 
 
@@ -48,6 +68,7 @@
 
 	body {
 		font-size: 1.6rem;
+		font-family: 'Gilmer Regular', sans-serif;
 	}
 
 	body,
