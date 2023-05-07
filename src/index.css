@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+	:root {}
+
+	:root[data-theme='dark'] {}
+
+
+
+	/* ------------------*/
+	/* General CSS Reset */
+	/*-------------------*/
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+
+	/* -------------------------- */
+	/* Making basic style resets */
+	/* ------------------------- */
+	html {
+		font-size: 62.5%;
+		scroll-behavior: smooth;
+	}
+
+
+	input:focus-visible {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+	}
+
+	img {
+		width: 100%;
+		max-inline-size: 100%;
+		max-width: unset;
+	}
+
+	button {
+		outline: transparent;
+	}
+
+	body {
+		font-size: 1.6rem;
+	}
+
+	body,
+	main {
+		min-height: 100vh;
+	}
+
+}
