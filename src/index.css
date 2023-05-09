@@ -23,8 +23,9 @@
 @layer base {
 	:root {
 		--color-blue: 243, 58%, 21%;
-		--color-green: 168, 53%, 52%, 1;
+		--color-green: 168, 53%, 52%;
 		--color-light-green: 68, 53%, 52%, 0.16;
+		--color-white: 0, 0%, 100%;
 	}
 
 	/* :root[data-theme='dark'] {} */
@@ -68,6 +69,7 @@
 
 	body {
 		font-size: 1.6rem;
+		font-weight: 400;
 		font-family: 'Gilmer Regular', sans-serif;
 	}
 

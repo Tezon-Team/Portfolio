@@ -1,4 +1,16 @@
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import GlobalLayout from './components/GlobalLayout';
+import Home from './pages/Home';
+
 const App = () => {
-	return <div>Appdrfsdf</div>;
+	const router = createBrowserRouter(
+		createRoutesFromElements(
+			<Route path="/" element={<GlobalLayout />}>
+				<Route index element={<Home />} />
+			</Route>
+		)
+	);
+
+	return <RouterProvider router={router} />;
 };
 export default App;
