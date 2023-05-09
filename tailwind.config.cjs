@@ -56,14 +56,19 @@ module.exports = {
 				}
 			);
 
-			// matchUtilities(
-			// 	{
-			// 		'border-shorthand': (value) => ({
-			// 			border: value,
-			// 		}),
-			// 	},
-			// 	{ values: { 1: '' } }
-			// );
+			matchUtilities(
+				{
+					'box-shadow': (value) => ({
+						'box-shadow': value,
+					}),
+				},
+				{
+					values: {
+						btn: '0 0 6.4rem var(--btn-shadow)',
+						nav: '0 0.4rem 6.4rem var(--nav-shadow)',
+					},
+				}
+			);
 		}),
 	],
 };
