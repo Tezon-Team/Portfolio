@@ -11,11 +11,16 @@ module.exports = {
 			xl: '1280px',
 		},
 
+		borderRadius: {
+			sm: '4px',
+			full: '50%',
+		},
+
 		colors: {
 			blue: 'hsl(var(--color-blue), <alpha-value>)',
 			green: 'hsl(var(--color-green), <alpha-value>)',
 			'light-green': 'hsl(var(--color-light-green))',
-			white: 'hsl(var(--color-white))',
+			white: 'hsl(var(--color-white), <alpha-value>)',
 			transparent: 'transparent',
 			current: 'currentColor',
 		},
@@ -35,27 +40,26 @@ module.exports = {
 		spacing: {},
 
 		extend: {
+			fontWeight: {
+				light: '300',
+				regular: '400',
+				medium: '600',
+			},
+
 			borderWidth: {
 				1: '1px',
+				2: '2px',
+			},
+
+			backgroundImage: {
+				placeholder: 'url(src/components/VideoSection/images/video-placeholder-mobile.svg)',
+				'hamburger-open': 'url(/src/assets/brand/hamburger.svg)',
 			},
 		},
 	},
 
 	plugins: [
 		plugin(({ matchVariant, matchUtilities }) => {
-			matchVariant(
-				'nth',
-				(value) => {
-					return `&:nth-child(${value})`;
-				},
-				{
-					values: {
-						2: '2',
-						3: '3',
-					},
-				}
-			);
-
 			matchUtilities(
 				{
 					'box-shadow': (value) => ({
@@ -66,6 +70,21 @@ module.exports = {
 					values: {
 						btn: '0 0 6.4rem var(--btn-shadow)',
 						nav: '0 0.4rem 6.4rem var(--nav-shadow)',
+						contact: '0 0 6.4rem var(--nav-shadow)',
+					},
+				}
+			);
+
+			matchVariant(
+				'nth',
+
+				(value) => {
+					return `&:nth-child(${value})`;
+				},
+				{
+					values: {
+						2: '2',
+						3: '3',
 					},
 				}
 			);

@@ -1,28 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
-import { logo } from '../../assets/brand';
-import Button from '../common/Button';
-import { useMobileQuery } from '../../hooks/useMediaQueries';
 import { twJoin } from 'tailwind-merge';
+import { useMobileQuery, useNavScroll } from '../../hooks';
+import Logo from '../common/Logo';
+import { Button } from '../common';
 
 const Navbar = () => {
 	const isMobile = useMobileQuery();
-	const headerRef = useRef(null);
-	const [isScrolled, setIsScrolled] = useState(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY >= 88) {
-				setIsScrolled(true);
-			} else {
-				setIsScrolled(false);
-			}
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	const { isScrolled, headerRef } = useNavScroll();
 
 	const renderedNavLinks = [
 		{ name: 'Home', href: '/' },
@@ -42,17 +26,15 @@ const Navbar = () => {
 		<header
 			ref={headerRef}
 			className={twJoin(
-				`z-200 fixed inset-[0_0_auto_0] flex items-center justify-between bg-white pr-[1.6rem] [transtion:box-shadow_0.5s_ease] md:pl-[4.9rem] md:pr-[6rem]`,
-				isScrolled && 'box-shadow-nav'
+				`fixed inset-[0_0_auto_0] z-[200] flex items-center justify-between bg-white pr-[1.6rem] [transition:box-shadow_0.5s_ease] md:pl-[4.9rem] md:pr-[6rem]`,
+				[isScrolled && 'box-shadow-nav']
 			)}
 		>
-			<div>
-				<img className="object-cover md:h-[10rem] md:w-[20rem]" src={logo} alt="" />
-			</div>
+			<Logo />
 
 			{/* HAMBURGER */}
 			{isMobile && (
-				<button className="h-[1.8rem] w-[1.8rem] bg-[url(/src/assets/brand/hamburger.svg)] bg-no-repeat active:rotate-180 active:[transition:all_0.4s_ease]">
+				<button className="min-h-[1.8rem] w-[1.8rem] bg-hamburger-open bg-no-repeat active:rotate-180 active:[transition:all_0.4s_ease]">
 					{/* Background-Img here */}
 				</button>
 			)}
@@ -66,3 +48,11 @@ const Navbar = () => {
 	);
 };
 export default Navbar;
+
+function undefined({ logo }) {
+	return (
+		<div className="md:h-[10rem] md:w-[20rem]">
+			<img className="h-full object-cover" src={logo} alt="" />
+		</div>
+	);
+}
