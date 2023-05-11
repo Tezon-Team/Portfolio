@@ -11,8 +11,9 @@ const TeamSection = () => {
 
 	const teamMembers = [
 		{ name: 'Maxmillian', image: Max, occupation: 'Backend Engineer.' },
-		{ name: 'JohnPaul', image: Charles, occupation: 'Full stack/Project manager.' },
+		{ name: 'Charles-Mary', image: Charles, occupation: 'Content/Copy writer.' },
 		{ name: 'Jeffery', image: Jeff, occupation: 'UI/UX Designer.' },
+		{ name: 'JohnPaul', image: Charles, occupation: 'Full stack/Project manager.' },
 	];
 
 	const renderedTeamList = teamMembers.map((member) => (

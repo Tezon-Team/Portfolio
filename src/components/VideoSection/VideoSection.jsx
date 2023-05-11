@@ -4,7 +4,7 @@ const VideoSection = () => {
 	return (
 		<section
 			id="Video Section"
-			className="relative flex w-full flex-col items-center px-[1.6rem] pt-[1.9rem]"
+			className="relative mt-[6.8rem] flex w-full flex-col items-center px-[1.6rem] pt-[1.9rem] lg:mt-[12.2rem]"
 		>
 			<span className="absolute inset-x-[0] top-[0] z-[-1] block h-[25rem] bg-blue" />
 

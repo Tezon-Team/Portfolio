@@ -1,11 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { twJoin } from 'tailwind-merge';
-import { useMobileQuery, useNavScroll } from '../../hooks';
-import Logo from '../common/Logo';
-import { Button } from '../common';
+import { useDesktopQuery, useNavScroll } from '../../hooks';
+import { Button, Logo } from '../common';
 
 const Navbar = () => {
-	const isMobile = useMobileQuery();
+	const isDesktop = useDesktopQuery();
 	const { isScrolled, headerRef } = useNavScroll();
 
 	const renderedNavLinks = [
@@ -18,7 +17,16 @@ const Navbar = () => {
 			className="border-x-blue first:mr-[4rem] last:ml-[4rem] nth-2:border-x-1 nth-2:px-[4rem] nth-3:border-r-1 nth-3:px-[4rem]"
 			key={link.name}
 		>
-			<NavLink to={link.href}>{link.name}</NavLink>
+			<NavLink className={'relative'} to={link.href}>
+				{({ isActive }) => (
+					<>
+						{link.name}
+						{isActive && (
+							<span className="absolute bottom-[-1.2rem] right-[50%] inline-block aspect-square w-[0.7rem] translate-x-[50%] rounded-full bg-green" />
+						)}
+					</>
+				)}
+			</NavLink>
 		</li>
 	));
 
@@ -26,33 +34,32 @@ const Navbar = () => {
 		<header
 			ref={headerRef}
 			className={twJoin(
-				`fixed inset-[0_0_auto_0] z-[200] flex items-center justify-between bg-white pr-[1.6rem] [transition:box-shadow_0.5s_ease] md:pl-[4.9rem] md:pr-[6rem]`,
+				`fixed inset-[0_0_auto_0] z-[200] flex items-center justify-between bg-white py-[0.5rem] pr-[1.6rem] [transition:box-shadow_0.5s_ease] md:py-[1rem] md:pl-[4.9rem] md:pr-[5.6rem]`,
 				[isScrolled && 'box-shadow-nav']
 			)}
 		>
 			<Logo />
 
 			{/* HAMBURGER */}
-			{isMobile && (
+			{!isDesktop && (
 				<button className="min-h-[1.8rem] w-[1.8rem] bg-hamburger-open bg-no-repeat active:rotate-180 active:[transition:all_0.4s_ease]">
 					{/* Background-Img here */}
 				</button>
 			)}
 
-			{/* <nav className="flex items-center justify-between">
-				<ul className="flex w-[50.3rem] items-center font-medium text-blue">{renderedNavLinks}</ul>
-			</nav> */}
+			{/* Navigation Links */}
+			{isDesktop && (
+				<>
+					<nav className="flex items-center justify-between">
+						<ul className="flex w-[50.3rem] items-center font-medium text-blue">
+							{renderedNavLinks}
+						</ul>
+					</nav>
 
-			{/* <Button variant={'small'} text={'Hire Us'} /> */}
+					<Button variant={'small'} text={'Hire Us'} />
+				</>
+			)}
 		</header>
 	);
 };
 export default Navbar;
-
-function undefined({ logo }) {
-	return (
-		<div className="md:h-[10rem] md:w-[20rem]">
-			<img className="h-full object-cover" src={logo} alt="" />
-		</div>
-	);
-}

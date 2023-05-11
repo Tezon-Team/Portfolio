@@ -29,7 +29,10 @@ const ContactSection = () => {
 	));
 
 	return (
-		<section className="relative mt-[8.4rem] flex flex-col items-center gap-[4rem] px-[1.6rem] pt-[1.8rem]">
+		<section
+			id="Contact Us"
+			className="relative mt-[8.4rem] flex flex-col items-center gap-[4rem] px-[1.6rem] pt-[1.8rem]"
+		>
 			<span className="absolute inset-x-[0] top-[0] z-[-1] block h-[25rem] bg-green" />
 
 			<div className="flex w-full flex-col items-center gap-[2.8rem] rounded-sm bg-white p-[5.2rem_1.7rem_2rem] text-center box-shadow-contact">
@@ -39,9 +42,9 @@ const ContactSection = () => {
 					<Heading text={'Get in touch with us'} />
 
 					<p className="w-[24.1rem] text-[1rem] leading-[1.2rem]">
-						You can contact us through our website by filling out our contact form on the right, or
-						by sending us a dm on any of our social media platforms. We strive to respond to all
-						inquiries within 24 hours.
+						You can contact us through our website by filling out our contact form on the right,
+						or by sending us a dm on any of our social media platforms. We strive to respond to
+						all inquiries within 24 hours.
 					</p>
 				</div>
 

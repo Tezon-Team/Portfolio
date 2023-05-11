@@ -1,5 +1,4 @@
-import { Button, Heading } from '../common';
-import Logo from '../common/Logo';
+import { Button, Heading, Logo } from '../common';
 
 const Footer = () => {
 	return (
