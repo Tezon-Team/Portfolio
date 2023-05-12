@@ -1,5 +1,5 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import GlobalLayout from './components/GlobalLayout';
+import GlobalLayout from './pages/GlobalLayout';
 import Home from './pages/Home';
 
 const App = () => {
