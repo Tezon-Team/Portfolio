@@ -13,6 +13,7 @@ module.exports = {
 
 		borderRadius: {
 			sm: '4px',
+			md: '8px',
 			full: '50%',
 		},
 
@@ -52,8 +53,22 @@ module.exports = {
 			},
 
 			backgroundImage: {
-				placeholder: 'url(src/components/VideoSection/images/video-placeholder-mobile.svg)',
+				'placeholder-mobile':
+					'url(src/components/VideoSection/images/video-placeholder-mobile.svg)',
+				'placeholder-desktop':
+					'url(src/components/VideoSection/images/video-placeholder-desktop.svg)',
 				'hamburger-open': 'url(/src/assets/brand/hamburger.svg)',
+			},
+
+			animation: {
+				'up-n-down': 'up-n-down 2s ease-in-out infinite',
+			},
+
+			keyframes: {
+				'up-n-down': {
+					'0%, 100%': { transform: 'translateY(-22%)' },
+					'50%': { transform: 'translateY(2%)' },
+				},
 			},
 		},
 	},

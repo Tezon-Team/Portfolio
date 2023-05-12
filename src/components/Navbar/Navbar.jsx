@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { twJoin } from 'tailwind-merge';
 import { useDesktopQuery, useNavScroll } from '../../hooks';
 import { Button, Logo } from '../common';
@@ -34,7 +34,7 @@ const Navbar = () => {
 		<header
 			ref={headerRef}
 			className={twJoin(
-				`fixed inset-[0_0_auto_0] z-[200] flex items-center justify-between bg-white py-[0.5rem] pr-[1.6rem] [transition:box-shadow_0.5s_ease] md:py-[1rem] md:pl-[4.9rem] md:pr-[5.6rem]`,
+				`fixed inset-[0_0_auto_0] z-[200] flex items-center justify-between bg-white py-[0.5rem] pr-[1.6rem] [transition:box-shadow_0.5s_ease] md:py-[0.8rem] md:pr-[5.6rem]`,
 				[isScrolled && 'box-shadow-nav']
 			)}
 		>
@@ -56,7 +56,9 @@ const Navbar = () => {
 						</ul>
 					</nav>
 
-					<Button variant={'small'} text={'Hire Us'} />
+					<Button variant={'small'}>
+						<Link>Hire Us</Link>
+					</Button>
 				</>
 			)}
 		</header>

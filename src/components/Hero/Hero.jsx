@@ -22,7 +22,7 @@ const Hero = () => {
 					</p>
 				</div>
 
-				<div className="mt-[3.9rem] flex items-center justify-between whitespace-nowrap">
+				<div className="mt-[3.9rem] flex items-center gap-[1rem] whitespace-nowrap lg:gap-[1.9rem]">
 					<Button variant={'large'} text={'Hire Us'} />
 					<Button variant={'contact'} text={'Contact Us'} />
 				</div>

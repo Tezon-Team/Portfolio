@@ -41,7 +41,7 @@
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
-		-webkit-tap-highlight-color: transparent;
+
 	}
 
 
@@ -51,6 +51,7 @@
 	html {
 		font-size: 62.5%;
 		scroll-behavior: smooth;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 
@@ -111,14 +112,16 @@
 	}
 
 	.pulse::before {
-		animation: pulse 5s ease-out infinite, colorAnimate 20s linear infinite alternate;
+		animation: pulse 4s ease-out infinite, colorAnimate 20s linear infinite alternate;
 	}
 
 	.pulse::after {
-		animation: pulse 5s 2.5s ease-out infinite, colorAnimate 20s linear infinite alternate;
+		animation: pulse 4s 2s ease-out infinite, colorAnimate 20s linear infinite alternate;
 	}
 
 	@keyframes pulse {
+
+		80%,
 		100% {
 			opacity: 0;
 			transform: scale(2);
