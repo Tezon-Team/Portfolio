@@ -27,7 +27,7 @@ const CoreActivities = () => {
 			image: [card3, card3Desktop],
 			description: 'User Interface Design, Illustrations, Logo and Flyers.',
 			circleClasses:
-				'w-[16rem] pt-[4.3rem] top-[-4rem] lg:w-[17.2rem] lg:h-[17.2rem] lg:left-[-4.1rem] lg:pl-[4.2rem] lg:pt-[3rem] lg:top-[-3.4rem]',
+				'w-[16rem] pt-[4.3rem] top-[-4.5rem] lg:w-[17.2rem] lg:h-[17.2rem] lg:left-[-4.1rem] lg:pl-[4.2rem] lg:pt-[3rem] lg:top-[-3.4rem]',
 			imageWrapperClasses: 'scale-[1.05] scale-[1]',
 		},
 	];
