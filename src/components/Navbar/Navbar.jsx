@@ -34,7 +34,7 @@ const Navbar = () => {
 		<header
 			ref={headerRef}
 			className={twJoin(
-				`fixed inset-[0_0_auto_0] z-[200] flex items-center justify-between bg-white py-[0.5rem] pr-[1.6rem] [transition:box-shadow_0.5s_ease] md:py-[0.8rem] md:pr-[5.6rem]`,
+				`sticky inset-[0_0_auto_0] z-[200] flex items-center justify-between bg-white py-[0.5rem] pr-[1.6rem] [transition:box-shadow_0.5s_ease] md:py-[0.8rem] md:pr-[5.6rem]`,
 				[isScrolled && 'box-shadow-nav']
 			)}
 		>

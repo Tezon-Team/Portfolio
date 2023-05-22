@@ -5,7 +5,7 @@ const Hero = () => {
 	return (
 		<section
 			id="Hero"
-			className="flex flex-col items-center gap-[5.2rem] p-[16rem_1.6rem_1rem] lg:flex-row lg:justify-between lg:p-[21.2rem_clamp(4rem,8vw,12rem)_0]"
+			className="flex flex-col items-center gap-[5.2rem] p-[6.2rem_1.6rem_1rem] lg:flex-row lg:justify-between lg:p-[9.6rem_clamp(4rem,8vw,12rem)_0]"
 		>
 			<div className="w-[32.8rem] text-center lg:w-[50.7rem] lg:text-start">
 				<h1 className="text-[1.4rem] font-light lg:text-[3.2rem]">TEZON -A tech team.</h1>
