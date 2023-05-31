@@ -21,7 +21,7 @@ const useNavScroll = () => {
 
 		return () => {
 			scrollWatcher.remove();
-			headerObserver.unobserve(scrollWatcher);
+			headerObserver.disconnect();
 		};
 	}, [headerObserver]);
 
