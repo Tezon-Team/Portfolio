@@ -2,7 +2,7 @@ import { useDesktopQuery } from '../../hooks';
 import { Button, Heading } from '../common';
 import { card1, card1Desktop, card2, card2Desktop, card3, card3Desktop, rightArrow } from './images';
 
-const CoreActivities = () => {
+function CoreActivities() {
 	const isDesktop = useDesktopQuery();
 
 	const cardList = [
@@ -10,25 +10,22 @@ const CoreActivities = () => {
 			title: 'Web Development.',
 			image: [card1, card1Desktop],
 			description: 'Mobile Responsive, JavaScript, HTML, CSS & MySQL.',
-			circleClasses:
-				'w-[15rem] pt-[3.4rem] top-[-4rem] lg:w-[17.2rem] lg:left-[-4.4rem] lg:pl-[6.7rem] lg:pt-[3rem] lg:top-[-3.4rem]',
-			imageWrapperClasses: 'scale-[1.38] scale-[1.5]',
+			circleClasses: 'w-[15rem] pt-[3.4rem] top-[-4rem] lg:w-[17.2rem] lg:left-[-4.4rem] lg:pl-[6.7rem] lg:pt-[3rem] lg:top-[-3.4rem]',
+			imageWrapperClasses: 'scale-[1.34] lg:scale-[1.5]',
 		},
 		{
 			title: 'Content/Copy Writing.',
 			image: [card2, card2Desktop],
 			description: 'Marketing Writeups, Lead generation, E-mail Marketing.',
-			circleClasses:
-				'w-[15rem] pt-[3.4rem] top-[-4rem] lg:w-[17.2rem] lg:left-[-4.4rem] lg:pl-[3.1rem] lg:pt-[2.4rem] lg:top-[-3.4rem]',
-			imageWrapperClasses: 'scale-[0.97] scale-[0.93]',
+			circleClasses: 'w-[15rem] pt-[3.4rem] top-[-4rem] lg:w-[17.2rem] lg:left-[-4.4rem] lg:pl-[3.1rem] lg:pt-[2.4rem] lg:top-[-3.4rem]',
+			imageWrapperClasses: 'scale-[0.97] lg:scale-[0.93]',
 		},
 		{
 			title: 'Graphic Designing',
 			image: [card3, card3Desktop],
 			description: 'User Interface Design, Illustrations, Logo and Flyers.',
-			circleClasses:
-				'w-[16rem] pt-[4.3rem] top-[-4.5rem] lg:w-[17.2rem] lg:h-[17.2rem] lg:left-[-4.1rem] lg:pl-[4.2rem] lg:pt-[3rem] lg:top-[-3.4rem]',
-			imageWrapperClasses: 'scale-[1.05] scale-[1]',
+			circleClasses: 'w-[16rem] pt-[4.3rem] top-[-4.5rem] lg:w-[17.2rem] lg:h-[17.2rem] lg:left-[-4.1rem] lg:pl-[4.2rem] lg:pt-[3rem] lg:top-[-3.4rem]',
+			imageWrapperClasses: 'scale-[1.05] lg:scale-[1]',
 		},
 	];
 
@@ -77,5 +74,5 @@ const CoreActivities = () => {
 			)}
 		</section>
 	);
-};
+}
 export default CoreActivities;

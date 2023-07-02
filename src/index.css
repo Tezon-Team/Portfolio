@@ -30,8 +30,6 @@
 		--nav-shadow: hsl(0, 2%, 25%, 0.12);
 	}
 
-	/* :root[data-theme='dark'] {} */
-
 
 
 	/* ------------------*/
@@ -87,13 +85,12 @@
 	}
 
 	body::-webkit-scrollbar-track {
-		background: hsl(0, 0%, 76%);
+		background: transparent;
 	}
 
 	body::-webkit-scrollbar-thumb {
 		background: hsl(var(--color-blue), 0.9);
 		border-radius: 10px;
-		border: 1px solid hsl(0, 0%, 76%);
 	}
 }
 

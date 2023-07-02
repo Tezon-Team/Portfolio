@@ -5,7 +5,7 @@ import Hero from '../components/Hero/Hero';
 import TeamSection from '../components/TeamSection/TeamSection';
 import VideoSection from '../components/VideoSection/VideoSection';
 
-const Home = () => {
+function Home() {
 	return (
 		<>
 			<Hero />
@@ -16,5 +16,5 @@ const Home = () => {
 			<ContactSection />
 		</>
 	);
-};
+}
 export default Home;

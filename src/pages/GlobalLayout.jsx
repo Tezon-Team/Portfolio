@@ -1,16 +1,15 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar/Navbar';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar/Navbar';
 
-const GlobalLayout = () => {
+function GlobalLayout() {
 	return (
 		<>
+			<ScrollRestoration />
 			<Navbar />
-
 			<Outlet />
-
 			<Footer />
 		</>
 	);
-};
+}
 export default GlobalLayout;

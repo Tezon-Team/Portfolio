@@ -1,6 +1,6 @@
 import playIcon from './images/play-icon.svg';
 
-const VideoSection = () => {
+function VideoSection() {
 	return (
 		<section
 			id="Video Section"
@@ -24,6 +24,6 @@ const VideoSection = () => {
 			</div>
 		</section>
 	);
-};
+}
 
 export default VideoSection;

@@ -8,18 +8,16 @@ import instagram from './images/instagram.svg';
 import linkedin from './images/linkedin.svg';
 import twitter from './images/twitter.svg';
 
-const ContactSection = () => {
+function ContactSection({ formHeading, formDescription }) {
 	const isDesktop = useDesktopQuery();
 
-	const mediaHandles = [
+	const renderedHandles = [
 		[facebook, 'Facebook', ''],
 		[twitter, 'Twitter', ''],
 		[gmail, 'G-mail', ''],
 		[instagram, 'Instagram', ''],
 		[linkedin, 'Linkedin', ''],
-	];
-
-	const renderedHandles = mediaHandles.map((handle) => (
+	].map((handle) => (
 		<span key={handle[1]} className="inline-flex items-center font-light lg:text-[2.4rem]">
 			<img className="h-[2.3rem] w-[2.2rem] lg:h-[4.5rem] lg:w-[4.1rem]" src={handle[0]} alt="" />
 
@@ -47,12 +45,13 @@ const ContactSection = () => {
 				<div className="flex w-[24.1rem] flex-col  gap-[0.9rem] lg:w-[min(100%,39.4rem)] lg:gap-[1.5rem]">
 					<h3 className="text-[1.2rem] font-light lg:text-[2.4rem]">Contact us</h3>
 
-					<Heading text={'Get in touch with us'} />
+					<Heading text={formHeading ?? 'Get in touch with us'} />
 
 					<p className=" text-[1rem] leading-[1.2rem] lg:text-[1.6rem] lg:leading-[1.92rem]">
-						You can contact us through our website by filling out our contact form on the right,
+						{formDescription ??
+							`You can contact us through our website by filling out our contact form on the right,
 						or by sending us a dm on any of our social media platforms. We strive to respond to
-						all inquiries within 24 hours.
+						all inquiries within 24 hours.`}
 					</p>
 
 					{isDesktop && (
@@ -95,5 +94,6 @@ const ContactSection = () => {
 			{!isDesktop && <div className="flex w-[13rem] flex-col gap-[2rem]">{renderedHandles}</div>}
 		</section>
 	);
-};
+}
+
 export default ContactSection;

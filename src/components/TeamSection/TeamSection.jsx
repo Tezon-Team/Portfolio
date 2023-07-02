@@ -1,26 +1,25 @@
-import { Heading } from '../common';
-import Max from './images/Max.svg';
-import Jeff from './images/Jeff.svg';
-import Charles from './images/Charles.svg';
-import arrowRight from './images/arrowRight.svg';
 import { useHorizontalScroll } from '../../hooks';
+import { Heading } from '../common';
+import Charles from './images/Charles.svg';
+import Jeff from './images/Jeff.svg';
+import Max from './images/Max.svg';
+import arrowRight from './images/arrowRight.svg';
 
 const TeamSection = () => {
 	const { slideContainerRef, slideRef, btnElements, handleNextSlide, handlePrevSlide } =
 		useHorizontalScroll();
 
-	const teamMembers = [
+	const renderedTeamList = [
 		{ name: 'Maxmillian', image: Max, occupation: 'Backend Engineer.' },
 		{ name: 'Charles-Mary', image: Charles, occupation: 'Content/Copy writer.' },
 		{ name: 'Jeffery', image: Jeff, occupation: 'UI/UX Designer.' },
 		{ name: 'JohnPaul', image: Charles, occupation: 'Full stack/Project manager.' },
-	];
-
-	const renderedTeamList = teamMembers.map((member) => (
+	].map((member) => (
 		<li ref={slideRef} key={member.name} className="snap-center">
-			<div className="relative top-[-0.2rem] h-[26.3rem] w-[18.6rem] lg:h-[50rem] lg:w-[34.6rem]">
-				<img className="h-full" src={member.image} alt="" />
-				<span className="absolute bottom-[-1.3rem] right-[0.2rem] inline-block h-[1.3rem] w-[8.8rem] bg-green lg:bottom-[-2.3rem] lg:right-[0rem] lg:h-[2.4rem] lg:w-[16.7rem] lg:rounded-br-md" />
+			<div className="relative top-[-0.2rem] h-[26.3rem] w-[18.6rem] lg:h-[40rem] lg:w-[30rem]">
+				<img className="h-full object-cover" src={member.image} alt="" />
+
+				<span className="absolute bottom-[-1.3rem] right-[0.2rem] inline-block h-[1.3rem] w-[8.8rem] bg-green lg:bottom-[-2.3rem] lg:right-[0rem] lg:h-[2.4rem] lg:w-[16rem] lg:rounded-br-md" />
 			</div>
 
 			<div className="mt-[3rem]">

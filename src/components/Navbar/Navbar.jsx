@@ -3,7 +3,7 @@ import { twJoin } from 'tailwind-merge';
 import { useDesktopQuery, useNavScroll } from '../../hooks';
 import { Button, Logo } from '../common';
 
-const Navbar = () => {
+function Navbar() {
 	const isDesktop = useDesktopQuery();
 	const { isScrolled, headerRef } = useNavScroll();
 
@@ -63,5 +63,5 @@ const Navbar = () => {
 			)}
 		</header>
 	);
-};
+}
 export default Navbar;

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Button, Heading } from '../common';
 import { useDesktopQuery } from '../../hooks';
-import mouse from './images/mouse.svg';
+import { Button, Heading } from '../common';
 import downArrow from './images/down-arrow.svg';
+import mouse from './images/mouse.svg';
 
-const AboutSection = () => {
+function AboutSection() {
 	const isDesktop = useDesktopQuery();
 
 	return (
@@ -43,11 +43,11 @@ const AboutSection = () => {
 					variant={'small'}
 					className={'relative z-[10] [margin-inline:auto] lg:mt-[2rem] lg:[margin-inline:auto_0]'}
 				>
-					<Link>{isDesktop ? 'Hire Us' : 'Read More'}</Link>
+					<Link to={'about-us'}>{isDesktop ? 'Hire Us' : 'Read More'}</Link>
 				</Button>
 			</div>
 		</section>
 	);
-};
+}
 
 export default AboutSection;

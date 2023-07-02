@@ -4,6 +4,8 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
+		spacing: {},
+
 		screens: {
 			sm: '480px',
 			md: '768px',
@@ -37,8 +39,6 @@ module.exports = {
 			regular: '400',
 			medium: '600',
 		},
-
-		spacing: {},
 
 		extend: {
 			fontWeight: {

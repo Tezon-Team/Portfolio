@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDesktopQuery } from '../../hooks/useMediaQueries';
 import { Button, Heading, Logo } from '../common';
 
-const Footer = () => {
+function Footer() {
 	const isDesktop = useDesktopQuery();
 
 	return (
@@ -15,14 +15,16 @@ const Footer = () => {
 					}
 				/>
 
-				<Button
-					hasIcon={!isDesktop}
-					variant={'contact'}
-					text={'Contact Us'}
-					className={
-						'gap-[1.9rem] p-[1.3rem_6.8rem] text-[1.2rem] font-medium lg:p-[1.3rem_5.6rem] lg:text-[1.6rem]'
-					}
-				/>
+				<Link to={'/contact-us'}>
+					<Button
+						hasIcon={!isDesktop}
+						variant={'contact'}
+						text={'Contact Us'}
+						className={
+							'gap-[1.9rem] p-[1.3rem_6.8rem] text-[1.2rem] font-medium lg:p-[1.3rem_5.6rem] lg:text-[1.6rem]'
+						}
+					/>
+				</Link>
 			</div>
 			<div className="lg:px[3.5rem] mt-[7.4rem] flex items-center justify-between px-[1.6rem] lg:mt-[5.7rem]">
 				<div>
@@ -70,5 +72,5 @@ const Footer = () => {
 			</p>
 		</footer>
 	);
-};
+}
 export default Footer;
