@@ -34,34 +34,38 @@ function Footer() {
 						. <span className="ml-[0.3rem]">Send a mail</span>
 					</p>
 
-					<Link
-						to="mailto: tezonteam@gmail.com"
+					<a
+						href="mailto: tezonteam@gmail.com"
 						className="text-[1.4rem] font-light lg:ml-[6rem] lg:text-[3.6rem]"
 					>
 						tezonteam@gmail.com
-					</Link>
+					</a>
 				</div>
 
 				<div className="flex flex-col gap-[1.6rem] lg:flex-row lg:gap-[16.5rem]">
 					<div className="lg:flex lg:flex-col lg:gap-[0.6rem] lg:font-light">
-						<h4 className="text-[1.2rem] lg:text-[2.4rem] lg:font-regular">Quick Links</h4>
+						<h4 className="text-[1.2rem] lg:text-[2.4rem] lg:font-regular">
+							<a>Quick Links</a>
+						</h4>
 						{isDesktop && (
 							<>
-								<Link to={'about-us'}> About us </Link>
+								<Link to={'/about-us'}> About us </Link>
 								<Link> Service </Link>
 								<Link> Portfolio </Link>
-								<Link to={'contact-us'}> Contact </Link>
+								<Link to={'/contact-us'}> Contact </Link>
 							</>
 						)}
 					</div>
 					<div className="lg:flex lg:flex-col lg:gap-[0.6rem] lg:font-light">
-						<h4 className="text-[1.2rem] lg:text-[2.4rem] lg:font-regular">Follow Us</h4>
+						<h4 className="text-[1.2rem] lg:text-[2.4rem] lg:font-regular">
+							<a>Follow Us</a>
+						</h4>
 						{isDesktop && (
 							<>
-								<Link> Twitter </Link>
-								<Link> Instagram </Link>
-								<Link> Linked-in </Link>
-								<Link> Facebook </Link>
+								<a> Twitter </a>
+								<a> Instagram </a>
+								<a> aed-in </a>
+								<a> Facebook </a>
 							</>
 						)}
 					</div>

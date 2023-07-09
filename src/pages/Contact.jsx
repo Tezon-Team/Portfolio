@@ -5,7 +5,8 @@ function Contact() {
 	return (
 		<section className="flex flex-col items-center pt-[5rem]">
 			<Heading>Contact Us</Heading>
-			<p className="mt-[1rem] text-[1.4rem]">
+
+			<p className="mt-[1rem] text-center text-[1.4rem] max-sm:w-[20ch]">
 				Any Questions, Remarks or Projects? Just write a message
 			</p>
 

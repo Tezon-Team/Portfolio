@@ -25,9 +25,9 @@ function Hero() {
 
 				<div className="mt-[3.9rem] flex items-center gap-[1rem] whitespace-nowrap lg:gap-[1.9rem]">
 					<Button variant={'large'} text={'Hire Us'} />
-					<Button variant={'contact'}>
-						<Link to={'contact-us'}>Contact Us</Link>
-					</Button>
+					<Link to={'/contact-us'}>
+						<Button variant={'contact'} text={'Contact Us'} />
+					</Link>
 				</div>
 			</div>
 
