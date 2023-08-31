@@ -26,6 +26,7 @@ function Footer() {
 					/>
 				</Link>
 			</div>
+
 			<div className="lg:px[3.5rem] mt-[7.4rem] flex items-center justify-between px-[1.6rem] lg:mt-[5.7rem]">
 				<div>
 					<Logo className={'ml-[-2rem]'} />
@@ -56,6 +57,7 @@ function Footer() {
 							</>
 						)}
 					</div>
+
 					<div className="lg:flex lg:flex-col lg:gap-[0.6rem] lg:font-light">
 						<h4 className="text-[1.2rem] lg:text-[2.4rem] lg:font-regular">
 							<a>Follow Us</a>
@@ -71,6 +73,7 @@ function Footer() {
 					</div>
 				</div>
 			</div>
+
 			<p className="mt-[5.2rem] text-center text-[1.2rem] font-light lg:mt-[5.8rem] lg:text-[2rem]">
 				Copyright* 2022TEZON. All rights reserved.
 			</p>

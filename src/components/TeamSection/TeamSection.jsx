@@ -1,35 +1,20 @@
 import { useHorizontalScroll } from '../../hooks';
-import { Heading } from '../common';
+import { For, Heading } from '../common';
 import Charles from './images/Charles.svg';
 import Jeff from './images/Jeff.svg';
 import Max from './images/Max.svg';
 import arrowRight from './images/arrowRight.svg';
 
+const teamList = [
+	{ name: 'Maxmillian', image: Max, occupation: 'Backend Engineer.' },
+	{ name: 'Charles-Mary', image: Charles, occupation: 'Content/Copy writer.' },
+	{ name: 'Jeffery', image: Jeff, occupation: 'UI/UX Designer.' },
+	{ name: 'JohnPaul', image: Charles, occupation: 'Full stack/Project manager.' },
+];
+
 const TeamSection = () => {
 	const { slideContainerRef, slideRef, btnElements, handleNextSlide, handlePrevSlide } =
 		useHorizontalScroll();
-
-	const renderedTeamList = [
-		{ name: 'Maxmillian', image: Max, occupation: 'Backend Engineer.' },
-		{ name: 'Charles-Mary', image: Charles, occupation: 'Content/Copy writer.' },
-		{ name: 'Jeffery', image: Jeff, occupation: 'UI/UX Designer.' },
-		{ name: 'JohnPaul', image: Charles, occupation: 'Full stack/Project manager.' },
-	].map((member) => (
-		<li ref={slideRef} key={member.name} className="snap-center">
-			<div className="relative top-[-0.2rem] h-[26.3rem] w-[18.6rem] lg:h-[40rem] lg:w-[30rem]">
-				<img className="h-full object-cover" src={member.image} alt="" />
-
-				<span className="absolute bottom-[-1.3rem] right-[0.2rem] inline-block h-[1.3rem] w-[8.8rem] bg-green lg:bottom-[-2.3rem] lg:right-[0rem] lg:h-[2.4rem] lg:w-[16rem] lg:rounded-br-md" />
-			</div>
-
-			<div className="mt-[3rem]">
-				<h4 className="lg:text-[2.4rem]">{member.name}</h4>
-				<p className="text-[1.2rem] font-light leading-[1.4rem] lg:text-[1.6rem] lg:leading-[1.92rem]">
-					{member.occupation}
-				</p>
-			</div>
-		</li>
-	));
 
 	return (
 		<section
@@ -52,7 +37,24 @@ const TeamSection = () => {
 			>
 				<span className="absolute inset-x-[0] z-[-1] ml-[1.6rem] block h-[8.7rem] rounded-tl-md bg-blue lg:h-[16rem]" />
 
-				{renderedTeamList}
+				<For
+					each={teamList}
+					render={(member) => (
+						<li ref={slideRef} key={member.name} className="snap-center">
+							<div className="relative top-[-0.2rem] h-[26.3rem] w-[18.6rem] lg:h-[50rem] lg:w-[34.6rem]">
+								<img className="h-full" src={member.image} alt="" />
+								<span className="absolute bottom-[-1.3rem] right-[0.2rem] inline-block h-[1.3rem] w-[8.8rem] bg-green lg:bottom-[-2.3rem] lg:right-[0rem] lg:h-[2.4rem] lg:w-[16.7rem] lg:rounded-br-md" />
+							</div>
+
+							<div className="mt-[3rem]">
+								<h4 className="lg:text-[2.4rem]">{member.name}</h4>
+								<p className="text-[1.2rem] font-light leading-[1.4rem] lg:text-[1.6rem] lg:leading-[1.92rem]">
+									{member.occupation}
+								</p>
+							</div>
+						</li>
+					)}
+				/>
 			</ul>
 
 			<button

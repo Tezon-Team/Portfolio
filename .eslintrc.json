@@ -53,6 +53,11 @@
 
 		//Tailwind rules
 		"tailwindcss/no-custom-classname": "off",
-		"tailwindcss/classnames-order": ["warn", { "config": "tailwind.config.cjs" }]
+		"tailwindcss/classnames-order": [
+			"off",
+			{
+				"config": "tailwind.config.cjs"
+			}
+		]
 	}
 }

@@ -1,37 +1,44 @@
 import { Link } from 'react-router-dom';
 import arrowSlant from '../../assets/shared/arrow-slant.svg';
 import { useDesktopQuery } from '../../hooks/useMediaQueries';
-import { Button, Heading } from '../common';
+import { Button, For, Heading } from '../common';
 import facebook from './images/facebook.svg';
 import gmail from './images/gmail.svg';
 import instagram from './images/instagram.svg';
 import linkedin from './images/linkedin.svg';
 import twitter from './images/twitter.svg';
 
+const handles = [
+	[facebook, 'Facebook', ''],
+	[twitter, 'Twitter', ''],
+	[gmail, 'G-mail', ''],
+	[instagram, 'Instagram', ''],
+	[linkedin, 'Linkedin', ''],
+];
+
 function ContactSection({ formHeading, formDescription }) {
 	const isDesktop = useDesktopQuery();
 
-	const renderedHandles = [
-		[facebook, 'Facebook', ''],
-		[twitter, 'Twitter', ''],
-		[gmail, 'G-mail', ''],
-		[instagram, 'Instagram', ''],
-		[linkedin, 'Linkedin', ''],
-	].map((handle) => (
-		<span key={handle[1]} className="inline-flex items-center font-light lg:text-[2.4rem]">
-			<img className="h-[2.3rem] w-[2.2rem] lg:h-[4.5rem] lg:w-[4.1rem]" src={handle[0]} alt="" />
+	const renderedHandles = (
+		<For
+			each={handles}
+			render={([image, description, link]) => (
+				<span key={image} className="inline-flex items-center font-light lg:text-[2.4rem]">
+					<img className="h-[2.3rem] w-[2.2rem] lg:h-[4.5rem] lg:w-[4.1rem]" src={image} alt="" />
 
-			<p className="ml-[1rem] mr-auto lg:ml-[2.1rem]">{handle[1]}</p>
+					<p className="ml-[1rem] mr-auto lg:ml-[2.1rem]">{description}</p>
 
-			<Link>
-				<img
-					className="aspect-square w-[0.6rem] lg:w-[1.2rem] lg:font-medium"
-					src={arrowSlant}
-					alt=""
-				/>
-			</Link>
-		</span>
-	));
+					<Link to={`/${link}`}>
+						<img
+							className="aspect-square w-[0.6rem] lg:w-[1.2rem] lg:font-medium"
+							src={arrowSlant}
+							alt=""
+						/>
+					</Link>
+				</span>
+			)}
+		/>
+	);
 
 	return (
 		<section

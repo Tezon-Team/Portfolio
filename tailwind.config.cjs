@@ -28,19 +28,13 @@ module.exports = {
 			current: 'currentColor',
 		},
 
-		fontFamily: {
-			medium: ['"Gilmer Medium"', 'sans-serif'],
-			regular: ['"Gilmer Regular"', 'sans-serif'],
-			light: ['"Gilmer Light"', 'sans-serif'],
-		},
-
-		fontWeight: {
-			light: '300',
-			regular: '400',
-			medium: '600',
-		},
-
 		extend: {
+			fontFamily: {
+				medium: ['"Gilmer Medium"', 'sans-serif'],
+				regular: ['"Gilmer Regular"', 'sans-serif'],
+				light: ['"Gilmer Light"', 'sans-serif'],
+			},
+
 			fontWeight: {
 				light: '300',
 				regular: '400',

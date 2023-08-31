@@ -1,34 +1,18 @@
-import { NavLink, Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { twJoin } from 'tailwind-merge';
 import { useDesktopQuery, useNavScroll } from '../../hooks';
-import { Button, Logo } from '../common';
+import { Button, For, Logo } from '../common';
+
+const navLinks = [
+	{ name: 'Home', href: '/' },
+	{ name: 'About Us', href: '/about-us' },
+	{ name: 'Pricing', href: '/pricing' },
+	{ name: 'Contact Us', href: '/contact-us' },
+];
 
 function Navbar() {
 	const isDesktop = useDesktopQuery();
 	const { isScrolled, headerRef } = useNavScroll();
-
-	const renderedNavLinks = [
-		{ name: 'Home', href: '/' },
-		{ name: 'About Us', href: '/about-us' },
-		{ name: 'Pricing', href: '/pricing' },
-		{ name: 'Contact Us', href: '/contact-us' },
-	].map((link) => (
-		<li
-			className="border-x-blue first:mr-[4rem] last:ml-[4rem] nth-2:border-x-1 nth-2:px-[4rem] nth-3:border-r-1 nth-3:px-[4rem]"
-			key={link.name}
-		>
-			<NavLink className={'relative'} to={link.href}>
-				{({ isActive }) => (
-					<>
-						{link.name}
-						{isActive && (
-							<span className="absolute bottom-[-1.2rem] right-[50%] inline-block aspect-square w-[0.7rem] translate-x-[50%] rounded-full bg-green" />
-						)}
-					</>
-				)}
-			</NavLink>
-		</li>
-	));
 
 	return (
 		<header
@@ -52,12 +36,31 @@ function Navbar() {
 				<>
 					<nav className="flex items-center justify-between">
 						<ul className="flex w-[50.3rem] items-center font-medium text-blue">
-							{renderedNavLinks}
+							<For
+								each={navLinks}
+								render={(link) => (
+									<li
+										className="border-x-blue first:mr-[4rem] last:ml-[4rem] nth-2:border-x-1 nth-2:px-[4rem] nth-3:border-r-1 nth-3:px-[4rem]"
+										key={link.name}
+									>
+										<NavLink className={'relative'} to={link.href}>
+											{({ isActive }) => (
+												<>
+													{link.name}
+													{isActive && (
+														<span className="absolute bottom-[-1.2rem] right-[50%] inline-block aspect-square w-[0.7rem] translate-x-[50%] rounded-full bg-green" />
+													)}
+												</>
+											)}
+										</NavLink>
+									</li>
+								)}
+							/>
 						</ul>
 					</nav>
 
 					<Button variant={'small'}>
-						<Link>Hire Us</Link>
+						<Link to={'/'}>Hire Us</Link>
 					</Button>
 				</>
 			)}
