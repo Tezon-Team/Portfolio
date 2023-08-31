@@ -53,7 +53,7 @@ function CoreActivities() {
 								<span className={`inline-block ${card.imageWrapperClasses}`}>
 									<picture>
 										<source media="(min-width: 1000px)" srcSet={card.image[1]} />
-										<img className="lg:rounded-tl-md" src={card.image[0]} alt="" />
+										<img className="h-full lg:rounded-tl-md" src={card.image[0]} alt="" />
 									</picture>
 								</span>
 							</div>

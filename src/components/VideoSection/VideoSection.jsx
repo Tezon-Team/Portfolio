@@ -19,7 +19,7 @@ function VideoSection() {
 
 			<div className="mt-[2.5rem] flex min-h-[19.6rem] w-[min(100%,32.8rem)] items-center justify-center rounded-sm bg-placeholder-mobile bg-cover bg-no-repeat lg:mt-[4.2rem] lg:min-h-[40rem] lg:w-full lg:rounded-md lg:bg-placeholder-desktop">
 				<span className="pulse relative inline-block aspect-square w-[10rem] cursor-pointer select-none [transition:transform_0.25s_ease-out] active:scale-[1.1] lg:w-[15rem]">
-					<img src={playIcon} alt="" />
+					<img className="h-full" src={playIcon} alt="" />
 				</span>
 			</div>
 		</section>

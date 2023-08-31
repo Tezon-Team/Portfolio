@@ -31,13 +31,18 @@ function Hero() {
 				</div>
 			</div>
 
-			<div className="flex min-h-[19.7rem] w-[29.8rem] items-center justify-center lg:h-[40.7rem] lg:w-[61.2rem]">
-				<div className="relative">
-					<span className="absolute bottom-[3.2rem] left-[1.2rem] z-[-1] inline-block h-[17.8rem] w-[29.8rem] bg-green lg:bottom-[6rem] lg:left-[1.5rem] lg:h-[81.5%] lg:w-[min(100%,59rem)] xl:h-[89%]" />
-					<img className="rounded-sm object-cover" src={heroImage} alt="" />
+			<div className="relative flex h-[19.7rem] w-[29.8rem] items-center justify-center lg:h-[40.7rem] lg:w-[61.2rem]">
+				<span className="absolute bottom-[3.2rem] left-[1.2rem] z-[-1] block h-[17.8rem] w-[29.8rem] bg-green lg:bottom-[6rem] lg:left-[1.5rem] lg:h-[81.5%] lg:w-[min(100%,59rem)] xl:h-[89%]" />
 
-					<span className="absolute right-[1.2rem] top-[3.2rem] z-[-1] inline-block h-[17.8rem] w-[29.8rem] bg-blue lg:right-[1.45rem] lg:top-[6rem] lg:h-[81.5%] lg:w-[min(100%,59rem)] xl:h-[89%]" />
-				</div>
+				<img
+					// eslint-disable-next-line react/no-unknown-property
+					fetchpriority="high"
+					className="h-full rounded-sm object-cover"
+					src={heroImage}
+					alt=""
+				/>
+
+				<span className="absolute right-[1.2rem] top-[3.2rem] z-[-1] block h-[17.8rem] w-[29.8rem] bg-blue lg:right-[1.45rem] lg:top-[6rem] lg:h-[81.5%] lg:w-[min(100%,59rem)] xl:h-[89%]" />
 			</div>
 		</section>
 	);

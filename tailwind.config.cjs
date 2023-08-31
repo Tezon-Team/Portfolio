@@ -72,9 +72,10 @@ module.exports = {
 			matchUtilities(
 				{
 					'box-shadow': (value) => ({
-						'box-shadow': value,
+						boxShadow: value,
 					}),
 				},
+
 				{
 					values: {
 						btn: '0 0 6.4rem var(--btn-shadow)',
@@ -90,6 +91,7 @@ module.exports = {
 				(value) => {
 					return `&:nth-child(${value})`;
 				},
+
 				{
 					values: {
 						2: '2',

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 const useHorizontalScroll = () => {
 	const slideRef = useRef(null);
@@ -7,17 +7,21 @@ const useHorizontalScroll = () => {
 
 	useEffect(() => {
 		const scrollContainer = slideContainerRef.current;
+		const isNotScrolled = scrollContainer.scrollLeft === 0;
+		const isScrolledToEnd =
+			scrollContainer.scrollLeft + scrollContainer.clientWidth === scrollContainer.scrollWidth;
+
 		// Hiding previous btn on initial mount
 		btnRefs.current.prevBtn.classList.add('hidden');
 
 		const handleScroll = () => {
-			if (scrollContainer.scrollLeft + scrollContainer.clientWidth === scrollContainer.scrollWidth) {
+			if (isScrolledToEnd) {
 				btnRefs.current.nextBtn.classList.add('hidden');
 			} else {
 				btnRefs.current.nextBtn.classList.remove('hidden');
 			}
 
-			if (scrollContainer.scrollLeft === 0) {
+			if (isNotScrolled) {
 				btnRefs.current.prevBtn.classList.add('hidden');
 			} else {
 				btnRefs.current.prevBtn.classList.remove('hidden');
@@ -29,15 +33,15 @@ const useHorizontalScroll = () => {
 		return () => scrollContainer.removeEventListener('scroll', handleScroll);
 	}, []);
 
-	const handleNextSlide = () => {
+	const handleNextSlide = useCallback(() => {
 		const slideWidth = slideRef.current.clientWidth;
 		slideContainerRef.current.scrollLeft += slideWidth;
-	};
+	}, []);
 
-	const handlePrevSlide = () => {
+	const handlePrevSlide = useCallback(() => {
 		const slideWidth = slideRef.current.clientWidth;
 		slideContainerRef.current.scrollLeft -= slideWidth;
-	};
+	}, []);
 
 	return {
 		slideRef,
