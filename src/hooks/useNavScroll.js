@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const useNavScroll = () => {
+const useNavScroll = (options = { rootMargin: '10px 0px 0px 0px' }) => {
 	const headerRef = useRef(null);
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [headerObserver] = useState(
@@ -9,13 +9,14 @@ const useNavScroll = () => {
 				([entry]) => {
 					setIsScrolled(!entry.isIntersecting);
 				},
-				{ rootMargin: '10px 0px 0px 0px' }
+				options
 			)
 	);
 
 	useEffect(() => {
 		const scrollWatcher = document.createElement('span');
-		scrollWatcher.setAttribute('data-scroll-watcher', '');
+		scrollWatcher.dataset.scrollWatcher = '';
+
 		headerRef.current.before(scrollWatcher);
 		headerObserver.observe(scrollWatcher);
 

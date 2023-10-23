@@ -12,17 +12,14 @@ const semanticClasses = {
 	},
 };
 
-const Button = ({ variant, text, children, className, onClick, hasIcon = true }) => {
-	const BTN_CLASSES = twMerge(
-		semanticClasses.base,
-		semanticClasses.variants[variant] ?? '',
-		className ?? ''
-	);
+const Button = ({ variant = '', className = '', text, children, onClick, hasIcon = false }) => {
+	const BTN_CLASSES = twMerge(semanticClasses.base, semanticClasses.variants[variant], className);
 
 	return (
 		<button className={BTN_CLASSES} onClick={onClick}>
 			{children ?? text}
-			{children == null && hasIcon && variant === 'contact' && (
+
+			{hasIcon && variant === 'contact' && (
 				<img className="aspect-square w-[1.2rem]" src={arrowSlant} alt="" />
 			)}
 		</button>

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin');
+import plugin from 'tailwindcss/plugin';
 
-module.exports = {
+const config = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		spacing: {},
@@ -47,8 +47,7 @@ module.exports = {
 			},
 
 			backgroundImage: {
-				'placeholder-mobile':
-					'url(/src/components/VideoSection/images/video-placeholder-mobile.svg)',
+				'placeholder-mobile': 'url(/src/components/VideoSection/images/video-placeholder-mobile.svg)',
 				'placeholder-desktop':
 					'url(/src/components/VideoSection/images/video-placeholder-desktop.svg)',
 				'hamburger-open': 'url(/src/assets/brand/hamburger.svg)',
@@ -102,3 +101,5 @@ module.exports = {
 		}),
 	],
 };
+
+export default config;

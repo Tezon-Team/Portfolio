@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-boolean-value */
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import About from './pages/About';
 import Contact from './pages/Contact';

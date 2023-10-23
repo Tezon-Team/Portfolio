@@ -2,23 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: 'Gilmer Medium';
-	src: url('./assets/fonts/gilmer-medium.woff2') format('woff2');
-	font-style: normal;
-}
 
-@font-face {
-	font-family: 'Gilmer Regular';
-	src: url('./assets/fonts/gilmer-regular.woff2') format('woff2');
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Gilmer Light';
-	src: url('./assets/fonts/gilmer-light.woff2') format('woff2');
-	font-style: normal;
-}
 
 @layer base {
 	:root {
@@ -30,7 +14,23 @@
 		--nav-shadow: hsl(0, 2%, 25%, 0.12);
 	}
 
+	@font-face {
+		font-family: 'Gilmer Medium';
+		src: url('./assets/fonts/gilmer-medium.woff2') format('woff2');
+		font-style: normal;
+	}
 
+	@font-face {
+		font-family: 'Gilmer Regular';
+		src: url('./assets/fonts/gilmer-regular.woff2') format('woff2');
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Gilmer Light';
+		src: url('./assets/fonts/gilmer-light.woff2') format('woff2');
+		font-style: normal;
+	}
 
 	/* ------------------*/
 	/* General CSS Reset */

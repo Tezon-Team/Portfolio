@@ -1,50 +1,55 @@
 import { useCallback, useEffect, useRef } from 'react';
+import { useThrottleByFrame } from './useThrottleByFrame';
 
 const useHorizontalScroll = () => {
-	const slideRef = useRef(null);
+	const slideItemRef = useRef(null);
 	const slideContainerRef = useRef(null);
 	const btnRefs = useRef({});
 
-	useEffect(() => {
-		const scrollContainer = slideContainerRef.current;
-		const isNotScrolled = scrollContainer.scrollLeft === 0;
+	const throttledHandleScroll = useThrottleByFrame(() => {
+		const hasNotScrolled = slideContainerRef.current.scrollLeft === 0;
 		const isScrolledToEnd =
-			scrollContainer.scrollLeft + scrollContainer.clientWidth === scrollContainer.scrollWidth;
+			slideContainerRef.current.scrollLeft + slideContainerRef.current.clientWidth ===
+			slideContainerRef.current.scrollWidth;
 
-		// Hiding previous btn on initial mount
-		btnRefs.current.prevBtn.classList.add('hidden');
+		if (isScrolledToEnd) {
+			btnRefs.current.nextBtn.classList.add('hidden');
+		} else {
+			btnRefs.current.nextBtn.classList.remove('hidden');
+		}
 
-		const handleScroll = () => {
-			if (isScrolledToEnd) {
-				btnRefs.current.nextBtn.classList.add('hidden');
-			} else {
-				btnRefs.current.nextBtn.classList.remove('hidden');
-			}
-
-			if (isNotScrolled) {
-				btnRefs.current.prevBtn.classList.add('hidden');
-			} else {
-				btnRefs.current.prevBtn.classList.remove('hidden');
-			}
-		};
-
-		scrollContainer.addEventListener('scroll', handleScroll);
-
-		return () => scrollContainer.removeEventListener('scroll', handleScroll);
-	}, []);
+		if (hasNotScrolled) {
+			btnRefs.current.prevBtn.classList.add('hidden');
+		} else {
+			btnRefs.current.prevBtn.classList.remove('hidden');
+		}
+	});
 
 	const handleNextSlide = useCallback(() => {
-		const slideWidth = slideRef.current.clientWidth;
-		slideContainerRef.current.scrollLeft += slideWidth;
+		const slideItemWidth = slideItemRef.current.clientWidth;
+
+		slideContainerRef.current.scrollLeft += slideItemWidth;
 	}, []);
 
 	const handlePrevSlide = useCallback(() => {
-		const slideWidth = slideRef.current.clientWidth;
-		slideContainerRef.current.scrollLeft -= slideWidth;
+		const slideItemWidth = slideItemRef.current.clientWidth;
+
+		slideContainerRef.current.scrollLeft -= slideItemWidth;
 	}, []);
 
+	useEffect(() => {
+		// Hiding previous btn on initial mount
+		btnRefs.current.prevBtn.classList.add('hidden');
+
+		const scrollContainer = slideContainerRef.current;
+
+		scrollContainer.addEventListener('scroll', throttledHandleScroll);
+
+		return () => scrollContainer.removeEventListener('scroll', throttledHandleScroll);
+	}, [throttledHandleScroll]);
+
 	return {
-		slideRef,
+		slideItemRef,
 		slideContainerRef,
 		btnElements: btnRefs.current,
 		handleNextSlide,

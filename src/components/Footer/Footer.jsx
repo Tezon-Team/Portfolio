@@ -15,16 +15,15 @@ function Footer() {
 					}
 				/>
 
-				<Link to={'/contact-us'}>
-					<Button
-						hasIcon={!isDesktop}
-						variant={'contact'}
-						text={'Contact Us'}
-						className={
-							'gap-[1.9rem] p-[1.3rem_6.8rem] text-[1.2rem] font-medium lg:p-[1.3rem_5.6rem] lg:text-[1.6rem]'
-						}
-					/>
-				</Link>
+				<Button
+					hasIcon={!isDesktop}
+					variant={'contact'}
+					className={
+						'gap-[1.9rem] p-[1.3rem_6.8rem] text-[1.2rem] font-medium lg:p-[1.3rem_5.6rem] lg:text-[1.6rem]'
+					}
+				>
+					<Link to={'/contact-us'}>Contact Us</Link>
+				</Button>
 			</div>
 
 			<div className="lg:px[3.5rem] mt-[7.4rem] flex items-center justify-between px-[1.6rem] lg:mt-[5.7rem]">
@@ -46,13 +45,13 @@ function Footer() {
 				<div className="flex flex-col gap-[1.6rem] lg:flex-row lg:gap-[16.5rem]">
 					<div className="lg:flex lg:flex-col lg:gap-[0.6rem] lg:font-light">
 						<h4 className="text-[1.2rem] lg:text-[2.4rem] lg:font-regular">
-							<a>Quick Links</a>
+							<a href="/">Quick Links</a>
 						</h4>
 						{isDesktop && (
 							<>
 								<Link to={'/about-us'}> About us </Link>
-								<Link> Service </Link>
-								<Link> Portfolio </Link>
+								<Link to={'/'}> Service </Link>
+								<Link to={'/'}> Portfolio </Link>
 								<Link to={'/contact-us'}> Contact </Link>
 							</>
 						)}
@@ -60,14 +59,14 @@ function Footer() {
 
 					<div className="lg:flex lg:flex-col lg:gap-[0.6rem] lg:font-light">
 						<h4 className="text-[1.2rem] lg:text-[2.4rem] lg:font-regular">
-							<a>Follow Us</a>
+							<a href="/">Follow Us</a>
 						</h4>
 						{isDesktop && (
 							<>
-								<a> Twitter </a>
-								<a> Instagram </a>
-								<a> aed-in </a>
-								<a> Facebook </a>
+								<a href="/"> Twitter </a>
+								<a href="/"> Instagram </a>
+								<a href="/"> Linked-in </a>
+								<a href="/"> Facebook </a>
 							</>
 						)}
 					</div>

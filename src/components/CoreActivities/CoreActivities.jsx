@@ -73,10 +73,12 @@ function CoreActivities() {
 
 			{isDesktop && (
 				<Button variant={'contact'} className={'mt-[6.5rem] lg:p-[1.2rem_7rem]'}>
-					View Our Portfolio <img className="h-[3.5rem] w-[2.25rem]" src={rightArrow} alt="" />
+					View Our Portfolio
+					<img className="h-[3.5rem] w-[2.25rem]" src={rightArrow} alt="" />
 				</Button>
 			)}
 		</section>
 	);
 }
+
 export default CoreActivities;
