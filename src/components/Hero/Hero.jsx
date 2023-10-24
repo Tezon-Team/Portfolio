@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Button } from '../common';
+import { Button } from '../../common';
 import heroImage from './images/hero-image.svg';
 
 function Hero() {

@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import arrowSlant from '../../assets/shared/arrow-slant.svg';
+import arrowSlant from '../assets/shared/arrow-slant.svg';
 
 const semanticClasses = {
 	base: 'flex items-center rounded-sm lg:rounded-md font-medium',

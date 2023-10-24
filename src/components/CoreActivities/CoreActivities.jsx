@@ -1,5 +1,5 @@
+import { Button, For, Heading } from '../../common';
 import { useDesktopQuery } from '../../hooks';
-import { Button, For, Heading } from '../common';
 import { card1, card1Desktop, card2, card2Desktop, card3, card3Desktop, rightArrow } from './images';
 
 const cardList = [

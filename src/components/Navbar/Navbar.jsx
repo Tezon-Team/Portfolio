@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { twJoin } from 'tailwind-merge';
+import { Button, For, Logo } from '../../common';
 import { useDesktopQuery, useNavScroll } from '../../hooks';
-import { Button, For, Logo } from '../common';
 
 const navLinks = [
 	{ name: 'Home', href: '/' },

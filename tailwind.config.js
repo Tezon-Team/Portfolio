@@ -48,8 +48,10 @@ const config = {
 
 			backgroundImage: {
 				'placeholder-mobile': 'url(/src/components/VideoSection/images/video-placeholder-mobile.svg)',
+
 				'placeholder-desktop':
 					'url(/src/components/VideoSection/images/video-placeholder-desktop.svg)',
+
 				'hamburger-open': 'url(/src/assets/brand/hamburger.svg)',
 			},
 

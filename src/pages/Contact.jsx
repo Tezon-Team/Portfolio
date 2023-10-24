@@ -1,5 +1,5 @@
 import ContactSection from '../components/ContactSection/ContactSection';
-import { Heading } from '../components/common';
+import { Heading } from '../common';
 
 function Contact() {
 	return (

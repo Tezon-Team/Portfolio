@@ -1,5 +1,5 @@
+import { For, Heading } from '../../common';
 import { useHorizontalScroll } from '../../hooks';
-import { For, Heading } from '../common';
 import Charles from './images/Charles.svg';
 import Jeff from './images/Jeff.svg';
 import Max from './images/Max.svg';

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
+import { Button, Heading, Logo } from '../../common';
 import { useDesktopQuery } from '../../hooks/useMediaQueries';
-import { Button, Heading, Logo } from '../common';
 
 function Footer() {
 	const isDesktop = useDesktopQuery();

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import arrowSlant from '../../assets/shared/arrow-slant.svg';
+import { Button, For, Heading } from '../../common';
 import { useDesktopQuery } from '../../hooks/useMediaQueries';
-import { Button, For, Heading } from '../common';
 import facebook from './images/facebook.svg';
 import gmail from './images/gmail.svg';
 import instagram from './images/instagram.svg';

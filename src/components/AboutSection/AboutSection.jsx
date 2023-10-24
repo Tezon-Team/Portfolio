@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
+import { Button, Heading } from '../../common';
 import { useDesktopQuery } from '../../hooks';
-import { Button, Heading } from '../common';
 import downArrow from './images/down-arrow.svg';
 import mouse from './images/mouse.svg';
 
@@ -30,11 +30,11 @@ function AboutSection() {
 
 			<div className="mt-[1.2rem] lg:w-[56rem]">
 				<p className="text-center text-[1.4rem] lg:text-end lg:text-[2.4rem] lg:leading-[2.88rem]">
-					Tezon is a technology company that specializes in developing cutting-edge software
-					solutions for businesses of all sizes, founded in 2022. One of tezon{`'`}s primary areas
-					of expertise is in developing custom software solutions that are tailored to the specific
-					needs of individual businesses. By working closely with clients to understand their
-					unique requirements, Tezon is able to create...
+					Tezon is a technology company that specializes in developing cutting-edge software solutions
+					for businesses of all sizes, founded in 2022. One of tezon{`'`}s primary areas of expertise
+					is in developing custom software solutions that are tailored to the specific needs of
+					individual businesses. By working closely with clients to understand their unique
+					requirements, Tezon is able to create...
 				</p>
 
 				<span className="absolute bottom-[0] z-[5] block h-[15.3rem] rotate-[180deg] bg-[linear-gradient(180deg,hsl(0,0%,100%)27.6%,_hsl(0,0%,100%,0)_100%)] max-md:inset-x-[0] lg:bottom-[2.4rem] lg:w-[56rem]" />

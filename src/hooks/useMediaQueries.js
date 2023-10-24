@@ -5,7 +5,7 @@ const tabletQuery = window.matchMedia('(min-width: 768px)');
 const desktopQuery = window.matchMedia('(min-width: 1000px)');
 
 const useMediaQuery = (screenSizeQuery) => {
-	const [isScreenSize, setIsScreenSize] = useState(() => screenSizeQuery.matches);
+	const [isScreenSize, setIsScreenSize] = useState(screenSizeQuery.matches);
 
 	useEffect(() => {
 		const handleMediaQueryChange = () => setIsScreenSize(screenSizeQuery.matches);
