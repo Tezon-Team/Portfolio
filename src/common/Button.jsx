@@ -12,7 +12,7 @@ const semanticClasses = {
 	},
 };
 
-const Button = ({ variant = '', className = '', text, children, onClick, hasIcon = false }) => {
+const Button = ({ variant = '', className = '', text, children, hasIcon = false, onClick }) => {
 	const BTN_CLASSES = twMerge(semanticClasses.base, semanticClasses.variants[variant], className);
 
 	return (
