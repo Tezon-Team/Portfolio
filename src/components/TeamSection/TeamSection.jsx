@@ -33,7 +33,7 @@ const TeamSection = () => {
 
 			<ul
 				ref={slideContainerRef}
-				className="flex w-full select-none snap-x snap-mandatory items-start gap-[2.6rem] overflow-x-scroll scroll-smooth pl-[5rem] [scrollbar-width:none] lg:gap-[5rem] lg:pl-[7rem] [&::-webkit-scrollbar]:hidden"
+				className="flex w-full select-none snap-x snap-mandatory items-start gap-[2.6rem] overflow-x-auto scroll-smooth pl-[5rem] [scrollbar-width:none] lg:gap-[5rem] lg:pl-[7rem] [&::-webkit-scrollbar]:hidden"
 			>
 				<span className="absolute inset-x-[0] z-[-1] ml-[1.6rem] block h-[8.7rem] rounded-tl-md bg-blue lg:h-[16rem]" />
 
