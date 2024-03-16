@@ -13,8 +13,7 @@ const teamList = [
 ];
 
 const TeamSection = () => {
-	const { slideContainerRef, slideItemRef, btnElements, handleNextSlide, handlePrevSlide } =
-		useHorizontalScroll();
+	const { slideContainerRef, btnElements, handleNextSlide, handlePrevSlide } = useHorizontalScroll();
 
 	return (
 		<section
@@ -40,7 +39,7 @@ const TeamSection = () => {
 				<For
 					each={teamList}
 					render={(member) => (
-						<li key={member.name} ref={slideItemRef} className="snap-center">
+						<li key={member.name} className="snap-center">
 							<div className="relative top-[-0.2rem] h-[26.3rem] w-[18.6rem] lg:h-[50rem] lg:w-[34.6rem]">
 								<img className="h-full" src={member.image} alt="" />
 								<span className="absolute bottom-[-1.3rem] right-[0.2rem] inline-block h-[1.3rem] w-[8.8rem] bg-green lg:bottom-[-2.3rem] lg:right-[0rem] lg:h-[2.4rem] lg:w-[16.7rem] lg:rounded-br-md" />
